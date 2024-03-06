@@ -10,7 +10,7 @@ PADDLE_SPEED = 8
 AI_PADDLE_SPEED = 5
 PLAYER_SCORE_POS = (50, 20)
 AI_SCORE_POS = (WIDTH - 80, 20)
-# Colors
+
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
@@ -91,25 +91,25 @@ while True:
             ball.x = WIDTH // 2 - ball_size // 2
             ball.y = HEIGHT // 2 - ball_size // 2
 
-    # Draw everything
+  
     screen.fill(BLACK)
     pygame.draw.rect(screen, WHITE, player_paddle)
     pygame.draw.rect(screen, RED, ai_paddle)
     pygame.draw.ellipse(screen, WHITE, ball)
 
-    # Draw scores
+    
     player_text = font.render(str(player_score), True, WHITE)
     ai_text = font.render(str(ai_score), True, RED)
     screen.blit(player_text, PLAYER_SCORE_POS)
     screen.blit(ai_text, AI_SCORE_POS)
 
-    # Start
+ 
     if not game_active:
         start_text = font.render("Press SPACE to start", True, WHITE)
         start_rect = start_text.get_rect(center=(WIDTH // 2, HEIGHT // 2))
         screen.blit(start_text, start_rect)
 
-    # Display
+   
     pygame.display.flip()
 
     # frame rate
