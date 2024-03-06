@@ -10,7 +10,7 @@ GRID_WIDTH = WIDTH // GRID_SIZE
 GRID_HEIGHT = HEIGHT // GRID_SIZE
 FPS = 10
 
-# colors
+
 BLACK = (0, 0, 0)
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
@@ -43,10 +43,10 @@ class Snake:
         elif self.direction == "RIGHT":
             self.x += GRID_SIZE
 
-        # Add current position to the body
+        # current position body
         self.body.append((self.x, self.y))
 
-        # Remove the tail if the snake hasn't grown
+        # Remove the tail 
         if len(self.body) > self.size:
             del self.body[0]
 
@@ -171,7 +171,7 @@ while running:
     if game_started:
         food.draw()
 
-    # Show messages and buttons
+    # Show 
     if not game_started:
         show_message("Click 'Start' to begin")
     elif game_over:
@@ -180,11 +180,11 @@ while running:
     else:
         pass
 
-    # Update  display
+    
     pygame.display.flip()
 
     # frame rate
     clock.tick(FPS)
 
-# Quit the game
+
 pygame.quit()
